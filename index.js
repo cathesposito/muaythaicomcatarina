@@ -21,12 +21,12 @@ function resposiveScreen1() {
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "none");
     }
-    if (currentScroll > 950 && currentScroll <= 1150) {
+    else if (currentScroll > 950 && currentScroll <= 1200) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "block");
       $(".pic3").css("display", "none");
     }
-    if (currentScroll > 1150 && currentScroll <= 1850) {
+    else if (currentScroll > 1200) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "block");
@@ -37,23 +37,20 @@ function resposiveScreen1() {
 function resposiveScreen2() {
   $(document).on("scroll", function() {
     const currentScroll = $("html").scrollTop();
-    if (currentScroll >= 200 && currentScroll <= 850) {
+    if (currentScroll >= 350 && currentScroll <= 900) {
       $(".pic1").css("display", "block");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "none");
-      $(".photosHidden").css("margin-top", 50);
     }
-    if (currentScroll > 850 && currentScroll <= 1100) {
+    else if (currentScroll > 900 && currentScroll <= 1050) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "block");
       $(".pic3").css("display", "none");
-      $(".photosHidden").css("margin-top", 50);
     }
-    if (currentScroll > 1100 && currentScroll <= 1550) {
+    else if (currentScroll > 1050) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "block");
-      $(".photosHidden").css("margin-top", 100)
     }
   });
 };
@@ -61,17 +58,38 @@ function resposiveScreen2() {
 function resposiveScreen3() {
   $(document).on("scroll", function() {
     const currentScroll = $("html").scrollTop();
+    if (currentScroll >= 200 && currentScroll <= 550) {
+      $(".pic1").css("display", "block");
+      $(".pic2").css("display", "none");
+      $(".pic3").css("display", "none");
+    }
+    else if (currentScroll > 550 && currentScroll <= 800) {
+      $(".pic1").css("display", "none");
+      $(".pic2").css("display", "block");
+      $(".pic3").css("display", "none");
+    }
+    else if (currentScroll > 800) {
+      $(".pic1").css("display", "none");
+      $(".pic2").css("display", "none");
+      $(".pic3").css("display", "block");
+    }
+  });
+};
+
+function resposiveScreen4() {
+  $(document).on("scroll", function() {
+    const currentScroll = $("html").scrollTop();
     if (currentScroll >= 0 && currentScroll <= 1000) {
       $(".pic1").css("display", "block");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "none");
     }
-    if (currentScroll > 1000 && currentScroll <= 1300) {
+    else if (currentScroll > 1000 && currentScroll <= 1300) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "block");
       $(".pic3").css("display", "none");
     }
-    if (currentScroll > 1300 && currentScroll <= 1500) {
+    else if (currentScroll > 1300) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "block");
@@ -84,11 +102,14 @@ function myFunction(){
   if (x >= 1400) {
     resposiveScreen1()
   }
-  if (x < 1400 && x >= 600) {
+  if (x <1400 && x >= 1300) {
     resposiveScreen2()
   }
-  if (x < 600) {
+  if (x < 1300 && x >= 600) {
     resposiveScreen3()
+  }
+  if (x < 600) {
+    resposiveScreen4()
   }
 }
 
