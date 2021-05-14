@@ -37,20 +37,23 @@ function resposiveScreen1() {
 function resposiveScreen2() {
   $(document).on("scroll", function() {
     const currentScroll = $("html").scrollTop();
-    if (currentScroll >= 200 && currentScroll <= 950) {
+    if (currentScroll >= 200 && currentScroll <= 850) {
       $(".pic1").css("display", "block");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "none");
+      $(".photosHidden").css("margin-top", 50);
     }
-    if (currentScroll > 950 && currentScroll <= 1050) {
+    if (currentScroll > 850 && currentScroll <= 1100) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "block");
       $(".pic3").css("display", "none");
+      $(".photosHidden").css("margin-top", 50);
     }
-    if (currentScroll > 1050 && currentScroll <= 1550) {
+    if (currentScroll > 1100 && currentScroll <= 1550) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "block");
+      $(".photosHidden").css("margin-top", 100)
     }
   });
 };
@@ -58,17 +61,17 @@ function resposiveScreen2() {
 function resposiveScreen3() {
   $(document).on("scroll", function() {
     const currentScroll = $("html").scrollTop();
-    if (currentScroll >= 0 && currentScroll <= 300) {
+    if (currentScroll >= 0 && currentScroll <= 1000) {
       $(".pic1").css("display", "block");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "none");
     }
-    if (currentScroll > 300 && currentScroll <= 700) {
+    if (currentScroll > 1000 && currentScroll <= 1300) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "block");
       $(".pic3").css("display", "none");
     }
-    if (currentScroll > 700 && currentScroll <= 900) {
+    if (currentScroll > 1300 && currentScroll <= 1500) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "block");
@@ -76,25 +79,17 @@ function resposiveScreen3() {
   });
 };
 
-
-// Media query
-function myFunction(x1, x2, x3) {
-  if (x1.matches) { // Media query matches for 1920x1080 and 1536x864
+function myFunction(){
+  var x = window.innerWidth;
+  if (x >= 1400) {
     resposiveScreen1()
   }
-  if (x2.matches) { // Media query matches for 1366x768
+  if (x < 1400 && x >= 600) {
     resposiveScreen2()
   }
-  if (x3.matches){ // Media query matches for 414x896 and 375x667 and 360x640
+  if (x < 600) {
     resposiveScreen3()
   }
-
 }
 
-var x1 = window.matchMedia("(min-width: 1400px)")
-var x2 = window.matchMedia("(min-width: 600px)")
-var x3 = window.matchMedia("(min-width: 360px)")
-myFunction(x1, x2, x3)
-x1.addListener(myFunction)
-x2.addListener(myFunction)
-x3.addListener(myFunction)
+myFunction()
