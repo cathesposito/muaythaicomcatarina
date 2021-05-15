@@ -79,17 +79,17 @@ function resposiveScreen3() {
 function resposiveScreen4() {
   $(document).on("scroll", function() {
     const currentScroll = $("html").scrollTop();
-    if (currentScroll >= 200 && currentScroll <= 300) {
+    if (currentScroll >= 0 && currentScroll <= 100) {
       $(".pic1").css("display", "block");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "none");
     }
-    else if (currentScroll > 300 && currentScroll <= 400) {
+    else if (currentScroll > 100 && currentScroll <= 300) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "block");
       $(".pic3").css("display", "none");
     }
-    else if (currentScroll > 400) {
+    else if (currentScroll > 300) {
       $(".pic1").css("display", "none");
       $(".pic2").css("display", "none");
       $(".pic3").css("display", "block");
